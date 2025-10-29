@@ -5,7 +5,6 @@
 body {
   color: #000;
   font-family: 'Poppins', sans-serif;
-  padding-top: 70px; /* prevents navbar from overlapping content */
 }
 
 /* ------------------------------
@@ -43,7 +42,8 @@ body {
 #package,
 #uiux,
 #print {
-  background-color: #000;
+  /* background-color: #000; */
+  background-image: url(./images/section-bg.png);
   padding: 100px 20px;
   text-align: center;
   color: #fff;
@@ -213,6 +213,75 @@ body {
   fill: #fff;
   cursor: move;
 }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .title-box {
+    padding: 30px 60px;
+  }
+  .title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-box {
+    padding: 25px 50px;
+    margin-bottom: 15px;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .cursor-icon {
+    width: 24px;
+    height: 24px;
+    bottom: -25px;
+    right: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-box {
+    display: block;
+    padding: 20px 30px;
+    border-width: 1.5px;
+    margin-bottom: 12px;
+  }
+  .title {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Adjust handle size */
+  .title-box::before,
+  .title-box::after,
+  .title-box span::before,
+  .title-box span::after,
+  .side-top,
+  .side-bottom,
+  .side-left,
+  .side-right {
+    width: 8px;
+    height: 8px;
+  }
+
+  .cursor-icon {
+    width: 20px;
+    height: 20px;
+    bottom: -20px;
+    right: -20px;
+  }
+}
+
+
+/* Optional: fix if navbar overlaps banner slightly */
+
 #tablecontent {
   display: none;
 }
@@ -285,54 +354,11 @@ body {
 }
 
 /* Instagram grid section */
-.instagram-grid {
-  flex: 2 1 600px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-}
 
-.insta-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.insta-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.insta-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .social-gallery {
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-  }
-
-  .mockup-scroll img {
-    max-width: 280px;
-    transform: none;
-  }
-
-  .instagram-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
-  }
-}
 #main {
   position: relative;
   text-align: center;
-  padding: 100px 20px;
+  padding: 130px 20px;
   /* background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); */
   background-image: url(./images/bg.png);
   overflow: hidden;
@@ -397,9 +423,65 @@ body {
   line-height: 1;
   gap: 10px;
 }
+@media (max-width: 1200px) {
+  .main-title {
+    font-size: 10rem;
+  }
+}
 
+/* Tablets */
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 8rem;
+  }
+  .name {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  #main {
+    padding: 100px 10px;
+  }
+  .main-title {
+    font-size: 6rem;
+    gap: 8px;
+  }
+  .name {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 576px) {
+  #main {
+    padding: 80px 10px;
+  }
+  .main-title {
+    font-size: 4.5rem;
+    gap: 6px;
+  }
+  .name {
+    font-size: 1.5rem;
+  }
+  .bulb-area {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  .name {
+    font-size: 1.3rem !important;
+  }
+}
 .bulb-area {
-  width: 1em;
+  /* width: 1em; */
   height: 1em;
   display: inline-block;
   position: relative;
@@ -411,12 +493,14 @@ body {
   object-fit: contain;
   filter: grayscale(100%) brightness(0.9);
   transition: all 0.6s ease;
+  box-shadow: none !important;
 }
 
 .bulb-area:hover .bulb-img {
   filter: grayscale(0%) brightness(1.1);
   transform: scale(1.05);
 }
+
 
 .name {
   color: #00b4ff;
@@ -663,3 +747,9 @@ body {
 .gallery-container{
   padding: 50px 30px;
 }
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+
